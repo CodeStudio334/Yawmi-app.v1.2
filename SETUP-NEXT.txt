@@ -1,0 +1,13 @@
+YAWMI v1.6 - Supabase connection configured.
+
+1. Supabase SQL table yawmi_profiles and RLS policies must already exist (SQL execution was shown successful).
+2. In Supabase > Authentication > Providers, enable Email. Check whether Confirm email is enabled; if enabled, confirm the email before login.
+3. In Authentication > URL Configuration, set Site URL to your exact published HTTPS GitHub Pages URL.
+4. Upload all files INSIDE the yawmi-pwa folder to the same GitHub Pages repository root, replacing old files. Do not publish ZIP directly.
+5. On iPhone, refresh and if needed close/reopen installed PWA to update service worker cache.
+6. Test: sign up, confirm email if required, log in, add a test meal, delete it, wait several seconds online, log out and back in, and verify deletion persists. Test across devices before trusting backup.
+7. Important: Changes sync after a short delay. If offline, the cloud backup may be out of date. Avoid simultaneous edits on two devices.
+8. Existing local data from older app versions must be backed up to JSON before login/upgrade, then restored after logging into the intended account.
+9. Never add a secret/service_role key to these public files.
+
+This build was statically inspected and syntax-checked, not live-tested against your Supabase account.

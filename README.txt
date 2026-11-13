@@ -1,19 +1,40 @@
-يومي | YAWMI — PWA
+يومي | YAWMI v1.4
+ابتكار سلطان محمد عاشور الزهراني
 
-1. ارفع جميع الملفات الموجودة داخل هذا المجلد إلى جذر مستودع GitHub عام (وليس ملف ZIP نفسه).
-2. في Settings > Pages اختر Deploy from a branch ثم main و /(root) واحفظ.
-3. افتح رابط GitHub Pages عبر Safari على iPhone.
-4. اضغط مشاركة ثم «إضافة إلى الشاشة الرئيسية».
-5. افتح «يومي» من أيقونته على الشاشة الرئيسية.
+المميزات:
+- إصلاح حذف الوجبات اليومية والمحفوظة وتحديث العرض فوراً.
+- صفحة مستقلة للوجبات المحفوظة مع بحث فوري وإضافة وجبة لليوم.
+- تخصيص أهداف السعرات والبروتين والكربوهيدرات والدهون والماء.
+- حساب اختياري ومزامنة سحابية عبر Supabase، بعد إكمال الإعداد.
+- المحافظة على جدولك وأرشيف الأيام وملفات الأساتذة والمهام والنسخ الاحتياطية.
 
-ملاحظات مهمة:
-- البيانات تُحفظ محليًا في IndexedDB على الجهاز نفسه، وليست متزامنة بين الأجهزة.
-- من قسم المزيد نزّل نسخة احتياطية بانتظام، خصوصًا قبل حذف التطبيق أو مسح بيانات Safari.
-- الأنشطة الماضية تظل بانتظار التأكيد حتى تحدد حالتها بنفسك.
-- عند تغيير حالة النشاط إلى مؤجل يُنشأ موعد تعويضي مع بقاء السجل الأصلي.
-- أوقات بعض الأنشطة، مثل مدة النادي والقيادة، وضعت افتراضيًا ويمكن تعديلها في نسخة مطورة.
-- التثبيت والعمل دون اتصال يتطلبان استضافة HTTPS؛ فتح index.html مباشرة من تطبيق الملفات ليس تثبيت PWA.
+إعداد المزامنة السحابية (مطلوب مرة واحدة من صاحب التطبيق):
+1. أنشئ مشروع Supabase في https://supabase.com
+2. من SQL Editor نفّذ محتويات supabase-setup.sql.
+3. من Project Settings > API انسخ Project URL والمفتاح العام publishable/anon.
+4. افتح cloud.js وعدّل CLOUD_CONFIG.url و CLOUD_CONFIG.anonKey بالقيم الصحيحة.
+5. من Authentication > Providers فعّل Email. اضبط إعدادات تأكيد البريد ورابط الموقع.
+6. ارفع ملفات التطبيق إلى نفس مسار GitHub Pages السابق عبر HTTPS.
+7. افتح المزيد > الحساب والمزامنة وأنشئ حساباً بالبريد وكلمة المرور.
+8. بعد تسجيل الدخول، نزّل نسخة احتياطية محلية أولاً ثم اختر رفع بيانات الجهاز للسحابة أو استعادة نسخة سحابية.
+9. عند تفعيل المزامنة، تُرفع التغييرات اللاحقة تلقائياً بعد الحفظ ما دام الجهاز متصلاً.
 
-تحديث 1.1: ضبط محاذاة التاريخ والوقت على iOS، منع التجاوز الأفقي، ضبط النوافذ، الحد من التكبير وتحديد نصوص الواجهة. الحقول تبقى قابلة للتحرير. ارفع الملفات فوق ملفات النسخة السابقة في نفس مستودع GitHub للحفاظ على بيانات الموقع المخزنة محليًا؛ لا تحذف التطبيق أو بيانات Safari.
+تنبيهات مهمة:
+- لا توجد خدمة سحابية متصلة افتراضياً. لا يمكن تفعيلها دون مشروع Supabase ومفاتيحه العامة.
+- لا تضع service_role أو أي مفاتيح سرية في ملفات المتصفح.
+- البريد الإلكتروني هو معرف تسجيل الدخول؛ تسجيل الدخول باسم مستخدم مستقل غير مدعوم بعد.
+- التخزين السحابي في هذه النسخة يعتمد على نسخة واحدة من حالة التطبيق لكل حساب (last-write-wins)، لذلك تجنب التعديل المتزامن من جهازين. لا يوجد دمج تلقائي للتغييرات المتعارضة.
+- تسجيل الخروج لا يحذف البيانات المحلية. على الأجهزة المشتركة احذف بيانات التطبيق بعد حفظ نسخة احتياطية إذا رغبت بحماية خصوصيتك.
+- لا تحذف تطبيقك القديم قبل أخذ نسخة احتياطية. استخدم نفس رابط GitHub Pages للحفاظ على IndexedDB.
+- أهداف التغذية يحددها المستخدم؛ القيم الافتراضية ليست توصيات طبية.
 
-الإصدار 1.2: إضافة عبارة «ابتكار سلطان محمد عاشور الزهراني» بشكل واضح أعلى صفحات التطبيق.
+
+YAWMI v1.5: LOGIN REQUIRED
+1. Create a Supabase project, execute supabase-setup.sql in SQL Editor.
+2. Put Project URL and publishable/anon key in CLOUD_CONFIG in cloud.js. NEVER put service_role or secret keys in browser code.
+3. Configure email authentication and allowed Site URL / redirect URLs in Supabase.
+4. Upload ALL files to the SAME GitHub Pages origin.
+5. Login gate will not unlock until the account is authenticated and the user's profile has been read or created successfully.
+6. IMPORTANT: If you have old LOCAL data from v1.4, EXPORT JSON BACKUP BEFORE installing v1.5. A new cloud account starts empty. After login, restore your exported JSON backup using the app's restore feature, then verify the cloud upload succeeded.
+7. A real server-side Supabase setup and a two-device test are required before relying on cloud backup.
+8. Concurrent edits on multiple devices are not merged: latest upload can overwrite another device's changes.

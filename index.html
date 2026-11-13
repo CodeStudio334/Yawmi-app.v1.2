@@ -30,4 +30,22 @@ button{touch-action:manipulation}
 
 .creator-credit{display:inline-flex;align-items:center;margin-top:12px;padding:9px 13px;border:1px solid rgba(108,202,255,.38);border-radius:12px;background:linear-gradient(110deg,rgba(38,116,169,.22),rgba(94,77,175,.2));color:#e2f4ff;font-size:clamp(12px,3.3vw,15px);font-weight:800;line-height:1.6;max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:right}
 body.light .creator-credit{color:#173657;background:#e7f3ff;border-color:#a7d4f2}
-</style></head><body><main class="shell" id="app"></main><nav class="nav" id="nav"></nav><div id="modal-root"></div><script src="app.js?v=1.2"></script><script src="ui-fix.js?v=1.2"></script></body></html>
+
+.nut-stat .progress{width:100%;margin-top:2px}.nut-stat .progress>div{min-width:0}.nut-stat .sub{overflow-wrap:anywhere} .activity .action{touch-action:manipulation}
+/* Nutrition module: inherits YAWMI navy and cyan theme */
+.nutrition-hero{background:linear-gradient(125deg,#1c4165,#182a4a 60%,#2b2858)}
+.nut-big{font-size:clamp(32px,9vw,46px);font-weight:900;color:var(--text);margin:16px 0 4px;font-variant-numeric:tabular-nums}
+.nut-big small,.nut-stat strong small{font-size:14px;color:var(--muted);font-weight:600}
+.nut-progress-meta{font-size:12px;color:var(--muted);margin-top:12px}
+.nut-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.nut-grid .card{margin:0;min-width:0}
+.nut-stat{display:flex;flex-direction:column;gap:12px;min-height:145px}
+.nut-stat strong{font-size:28px}.nut-emoji{display:grid;place-items:center;font-size:25px;background:#7164c52a;border-radius:13px;width:48px;height:48px}
+.nut-water-icon{font-size:46px}.nut-water-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.nut-water-buttons button{min-width:0;padding:12px 5px}.nut-water-log{border-top:1px solid var(--line);margin-top:15px;padding-top:10px;display:grid;gap:8px}
+.nut-check{display:flex;align-items:center;gap:10px;color:var(--text);margin:18px 0}.nut-check input{width:20px;min-width:20px;min-height:20px;height:20px;accent-color:#55c8fa}
+@media(max-width:350px){.nut-water-buttons{grid-template-columns:1fr}}
+.light .nutrition-hero{background:linear-gradient(125deg,#d4ebff,#e9e7ff)}
+
+.yawmi-login{max-width:500px;margin:8vh auto;text-align:center;padding:24px}.yawmi-login .form-field{text-align:right}.yawmi-lock-icon{font-size:48px}.yawmi-login .notice{line-height:1.8}.yawmi-login .btnrow{margin-top:20px}
+</style></head><body><main class="shell" id="app"></main><nav class="nav" id="nav"></nav><div id="modal-root"></div><script src="app.js?v=1.6"></script><script src="nutrition.js?v=1.6"></script><script src="ui-fix.js?v=1.6"></script><script src="cloud.js?v=1.6"></script><script src="auth-gate.js?v=1.6"></script></body></html>
