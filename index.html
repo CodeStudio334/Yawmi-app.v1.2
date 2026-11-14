@@ -57,29 +57,4 @@ body.light .creator-credit{color:#173657;background:#e7f3ff;border-color:#a7d4f2
 .nut-meal-top,.nut-meal-heading{display:flex;align-items:center;gap:12px}.nut-meal-top{justify-content:space-between}.nut-meal-heading{min-width:0}.nut-meal-heading strong{font-size:clamp(17px,4.5vw,22px)}.nut-meal-heading .sub{margin:5px 0 0;font-size:12px}.nut-meal-icon{display:grid;place-items:center;flex-shrink:0;width:46px;height:46px;border-radius:14px;background:color-mix(in srgb,var(--meal-accent) 15%,transparent);font-size:24px}.nut-meal-add{flex-shrink:0;border-radius:15px;color:var(--text)}
 .nut-meal-entries{border-top:1px solid var(--line);margin-top:14px}.nut-meal-entry{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 0;flex-wrap:wrap}.nut-meal-entry+.nut-meal-entry{border-top:1px solid var(--line)}.nut-meal-entry-info{display:flex;flex-direction:column;gap:5px;min-width:0;flex:1}.nut-meal-entry-info strong{overflow-wrap:anywhere}.nut-meal-entry-info .sub{font-size:12px}.nut-meal-actions{display:flex;gap:6px}.nut-meal-actions .action{padding:8px 10px}.nut-choose-options{display:grid;gap:12px}.nut-pick-item{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:right;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:14px;padding:14px;margin:9px 0;font:inherit}.nut-pick-item>span:first-child{display:flex;flex-direction:column;gap:5px}
 @media(max-width:380px){.nut-meal-card{padding:13px 10px}.nut-meal-heading{gap:7px}.nut-meal-icon{width:38px;height:38px}.nut-meal-add{padding:9px 10px}}
-
-/* YAWMI 2.0 visual refinements */
-.card{border-radius:24px;border-color:#ffffff1b;box-shadow:0 12px 36px #00000024}.action{transition:transform .15s,filter .15s}.action:active{transform:scale(.98)}.head-title{letter-spacing:-.6px}.nav{box-shadow:0 -8px 35px #0003}.nav button{min-height:55px}.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.feature-grid .card{margin:0}.feature-number{font-size:25px;font-weight:850;color:var(--accent)}.feature-muted{font-size:12px;color:var(--muted)}.weekly-item{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:12px 0}.weekly-item:last-child{border:0}@media(max-width:420px){.feature-grid{gap:7px}.feature-grid .card{padding:12px}.btnrow>*{min-width:105px}}
-
-/* v2.1 navigation and card polish */
-.card{border:1px solid rgba(148,190,230,.22);box-shadow:0 8px 28px rgba(0,0,0,.13)}.action.danger{background:#6b2636;color:#fff;border:1px solid #bd5567}.action{cursor:pointer}.teacher .btnrow{display:grid;grid-template-columns:1fr 1fr}.teacher .btnrow .action{min-width:0}
-
-/* YAWMI 2.2: refreshed layout, clear hierarchy, touch-friendly controls */
-:root{--bg:#08111f;--surface:#14243a;--surface2:#203650;--line:#304964;--accent:#67d5ff}
-body{background:radial-gradient(ellipse at top right,#16395c 0%,#08111f 46%);line-height:1.6}
-.shell{max-width:760px;padding:20px 15px calc(115px + env(safe-area-inset-bottom))}
-.header{margin-bottom:14px}.brand{font-size:25px}.head-title{font-size:25px;line-height:1.35}
-.card{border-radius:21px;background:linear-gradient(150deg,#192d47,#112037);border:1px solid #ffffff19;box-shadow:0 10px 28px #0002;padding:17px}
-.action{min-height:46px;border-radius:13px}.action.full{margin-top:4px}
-.v22-hero{padding:23px 18px;background:linear-gradient(120deg,#1a4a70,#203258 65%,#292e5e)}
-.v22-hero h2{font-size:23px;margin:8px 0}.v22-kicker{font-size:12px;letter-spacing:1px;color:#b4ecff}
-.v22-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:17px}
-.v22-stats>div{padding:13px 4px;background:#ffffff14;border:1px solid #ffffff1a;border-radius:15px;text-align:center}
-.v22-stats b{font-size:22px;display:block;color:#91e3ff}.v22-stats small{display:block;color:#c4d6e8;font-size:10px}
-.v22-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:12px 0 24px}
-.v22-tile{min-width:0;min-height:135px;text-align:right;background:linear-gradient(150deg,#1c304c,#14243a);color:var(--text);border:1px solid #3b536e;border-radius:20px;padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:4px;box-shadow:0 7px 18px #0002}
-.v22-tile:active{transform:scale(.98);background:#274462}.v22-ico{font-size:27px}.v22-tile strong{font-size:15px}.v22-tile small{color:#adc2d9;font-size:11px}
-.nav{padding-bottom:calc(7px + env(safe-area-inset-bottom));background:#101f34f5}.nav button{min-height:58px;font-size:11px}.nav button.active{background:#294864;color:#99e3ff}
-@media(max-width:360px){.v22-tile{padding:12px;min-height:125px}.v22-tile strong{font-size:13px}}
-.light .v22-tile{background:#fff;color:#18354f}.light .v22-tile small{color:#5d738b}.light .v22-stats>div{background:#ffffff25}
-</style></head><body><main class="shell" id="app"></main><nav class="nav" id="nav"></nav><div id="modal-root"></div><script src="app.js?v=1.8"></script><script src="nutrition.js?v=1.8"></script><script src="features.js?v=2.0"></script><script src="upgrade.js?v=2.1"></script><script src="experience.js?v=2.2"></script><script src="ui-fix.js?v=1.6"></script><script src="cloud.js?v=1.6"></script><script src="auth-gate.js?v=1.6"></script></body></html>
+</style></head><body><main class="shell" id="app"></main><nav class="nav" id="nav"></nav><div id="modal-root"></div><script src="app.js?v=1.8"></script><script src="nutrition.js?v=1.8"></script><script src="ui-fix.js?v=1.6"></script><script src="cloud.js?v=1.6"></script><script src="auth-gate.js?v=1.6"></script></body></html>
